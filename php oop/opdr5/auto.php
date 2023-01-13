@@ -1,5 +1,6 @@
 <?php
-class Auto {
+class Auto
+{
     public $merk;
     public $type;
     public $kleur;
@@ -10,7 +11,7 @@ class Auto {
     public $benzine;
     public $verbruik;
 
-    function __construct($merk, $type, $kleur, $heeftTrekhaak , $kenteken, $kilometers, $tankinhoud, $benzine, $verbruik)
+    function __construct($merk, $type, $kleur, $heeftTrekhaak, $kenteken, $kilometers, $tankinhoud, $benzine, $verbruik)
     {
         $this->merk = $merk;
         $this->type = $type;
@@ -22,23 +23,46 @@ class Auto {
         $this->benzine = $benzine;
         $this->verbruik = $verbruik;
     }
-    public function tanken($liters){
-        $this->benzine += $liters;
+    public function Tanken($liters = -1)
+    {
+        if ($liters > 0) {
+            $this->benzine += $liters;
+        } else {
+            $this->benzine = $this->tankinhoud;
+        }
     }
-    public function rijden($kilometers){
-        $verbruik = $kilometers * $this->verbruik;
-        if($this->benzine >= $verbruik){
+
+    public function Rijden($kilometers)
+    {
+        $verbruik = ($this->verbruik = $kilometers) / 100;
+        if ($this->benzine >= $verbruik) {
             $this->kilometers += $kilometers;
             $this->benzine -= $verbruik;
             return $kilometers;
-        }else{
-            $maxKilometers = $this->benzine / $this->verbruik;
-            $this->kilometers += $maxKilometers;
-            $this->benzine = 0;
-            return $maxKilometers;
+        } else {
+            $kilometers = ($this->benzine / $this->verbruik) * 100;
+            $this->kilometers += $kilometers;
+            $this->benzine -= ($this->verbruik * $kilometers) / 100;
+            return $kilometers;
         }
     }
+// public function tanken($liters){
+//     $this->benzine += $liters;
+// }
+// public function rijden($kilometers){
+//     $verbruik = $kilometers * $this->verbruik;
+//     if($this->benzine >= $verbruik){
+//         $this->kilometers += $kilometers;
+//         $this->benzine -= $verbruik;
+//         return $kilometers;
+//     }else{
+//         $maxKilometers = $this->benzine / $this->verbruik;
+//         $this->kilometers += $maxKilometers;
+//         $this->benzine = 0;
+//         return $maxKilometers;
+//     }
 }
+
 
 $auto1 = new Auto("Audi", "A4", "blauw", true, "12-AB-34", 100000, 60, 20, 1.5);
 $auto2 = new Auto("BMW", "X5", "zwart", false, "12-AB-34", 100000, 60, 20, 1.5);
