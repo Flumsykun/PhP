@@ -1,7 +1,7 @@
 <?php
 require_once "auto.php";
 session_start();
-
+//session
 if (!isset($_SESSION['auto'])) {
     $_SESSION['auto'] = array();
 }
@@ -10,50 +10,55 @@ if (isset($_POST['submit'])) {
     $auto1 = new Auto($_POST['merk'], $_POST['type'], $_POST['kleur'], $_POST['trekhaak'], $_POST['kenteken'], $_POST['kilometers'], $_POST['benzine'], $_POST['tankinhoud'], $_POST['verbruik']);
     $_SESSION['auto'][] = $auto1;
 }
+//styling
 ?>
+
 <style>
-     @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
-     
+    @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-     body {
-         background: #0e0700;
-         color: #fff;
-         font-family: 'Lato', Arial, sans-serif;
-     }
 
-     h1 {
-         font-family: "proxima-nova",sans-serif;
-         letter-spacing: -0.01em;
-         font-weight: 700;
-         font-style: normal;
-         font-size: 60px;
-         margin-left: -3px;
-         line-height: 1em;
-         color: #fff;
-         text-align: center;
-         margin-bottom: 8px;
-         text-rendering: optimizeLegibility;
-     }
+    body {
+        background: #0e0700;
+        color: #fff;
+        font-family: 'Lato', Arial, sans-serif;
+    }
 
-     table {
-         width: 80%;
-         margin: auto;
-     }
+    h1 {
+        font-family: "proxima-nova", sans-serif;
+        letter-spacing: -0.01em;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 60px;
+        margin-left: -3px;
+        line-height: 1em;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 8px;
+        text-rendering: optimizeLegibility;
+    }
 
-     table, th, td {
-         border: 1px solid #fff;
-         border-collapse: collapse;
-     }
+    table {
+        width: 80%;
+        margin: auto;
+    }
 
-     th, td {
-         padding: 15px;
-     }
-.invul {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-}
+    table,
+    th,
+    td {
+        border: 1px solid #fff;
+        border-collapse: collapse;
+    }
 
+    th,
+    td {
+        padding: 15px;
+    }
+
+    .invul {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
 </style>
 
 <table>
@@ -69,40 +74,42 @@ if (isset($_POST['submit'])) {
         <th>Verbruik</th>
     </tr>
 
-<form class="invul" method='post'>
-Merk: <input type='text' name='merk'><br>
-Type: <input type='text' name='type'><br>
-Kleur: <input type='text' name='kleur'><br>
-Heeft trekhaak: <input type='checkbox' name='trekhaak'><br>
-Kenteken: <input type='text' name='kenteken'><br>
-Kilometers: <input type='number' name='kilometers'><br>
-Benzine: <input type='number' name='benzine'><br>
-Tankinhoud: <input type='number' name='tankinhoud'><br>
-Verbruik: <input type='number' name='verbruik'><br>
-<input type='submit' name='submit' value='Submit'>
-</form>
+    <h1>Auto invoeren</h1>
+
+    <form class="invul" method='post'>
+        Merk: <input type='text' name='merk'><br>
+        Type: <input type='text' name='type'><br>
+        Kleur: <input type='text' name='kleur'><br>
+        Heeft trekhaak: <input type='checkbox' name='trekhaak'><br>
+        Kenteken: <input type='text' name='kenteken'><br>
+        Kilometers: <input type='number' name='kilometers'><br>
+        Benzine: <input type='number' name='benzine'><br>
+        Tankinhoud: <input type='number' name='tankinhoud'><br>
+        Verbruik: <input type='number' name='verbruik'><br>
+        <input type='submit' name='submit' value='Submit'>
+    </form>
 
     <?php
 
-echo "<br><br>";
-
-echo"<h1>Auto invoeren</h1>";
-
-echo "<form method='post'>";
-echo "Merk: <input type='text' name='merk'><br>";
-echo "Type: <input type='text' name='type'><br>";
-echo "Kleur: <input type='text' name='kleur'><br>";
-echo "Heeft trekhaak: <input type='checkbox' name='trekhaak'><br>";
-echo "Kenteken: <input type='text' name='kenteken'><br>";
-echo "Kilometers: <input type='number' name='kilometers'><br>";
-echo "Benzine: <input type='number' name='benzine'><br>";
-echo "Tankinhoud: <input type='number' name='tankinhoud'><br>";
-echo "Verbruik: <input type='number' name='verbruik'><br>";
-echo "<input type='submit' name='submit' value='Submit'>";
-echo "</form>";
-
-echo "<br> <br>";
-
+    // echo "<br><br>";
+    
+    // echo"<h1>Auto invoeren</h1>";
+    
+    // echo "<form method='post'>";
+// echo "Merk: <input type='text' name='merk'><br>";
+// echo "Type: <input type='text' name='type'><br>";
+// echo "Kleur: <input type='text' name='kleur'><br>";
+// echo "Heeft trekhaak: <input type='checkbox' name='trekhaak'><br>";
+// echo "Kenteken: <input type='text' name='kenteken'><br>";
+// echo "Kilometers: <input type='number' name='kilometers'><br>";
+// echo "Benzine: <input type='number' name='benzine'><br>";
+// echo "Tankinhoud: <input type='number' name='tankinhoud'><br>";
+// echo "Verbruik: <input type='number' name='verbruik'><br>";
+// echo "<input type='submit' name='submit' value='Submit'>";
+// echo "</form>";
+    
+    // echo "<br> <br>";
+    
     // foreach ($_SESSION['auto'] as $auto1) {
     //     echo "Merk: " . $auto1->merk . "<br>";
     //     echo "Type: " . $auto1->type . "<br>";
@@ -115,8 +122,8 @@ echo "<br> <br>";
     //     echo "Verbruik: " . $auto1->verbruik . "<br>";
     //     echo "<br> <br>";
     // }
-
-// foreach loop  display the data in the table
+    
+    // foreach loop  display the data in the table
     foreach ($_SESSION['auto'] as $auto1) {
         echo "<tr>";
         echo "<td>" . $auto1->merk . "</td>";
@@ -130,5 +137,4 @@ echo "<br> <br>";
         echo "<td>" . $auto1->verbruik . "</td>";
         echo "</tr>";
     }
-
     ?>
