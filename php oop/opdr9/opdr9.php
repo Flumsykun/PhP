@@ -12,21 +12,48 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <style>
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
+     @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+     
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-    }
+     body {
+         background: #0e0700;
+         color: #fff;
+         font-family: 'Lato', Arial, sans-serif;
+     }
 
-    th {
-        background-color: #f2f2f2;
-    }
+     h1 {
+         font-family: "proxima-nova",sans-serif;
+         letter-spacing: -0.01em;
+         font-weight: 700;
+         font-style: normal;
+         font-size: 60px;
+         margin-left: -3px;
+         line-height: 1em;
+         color: #fff;
+         text-align: center;
+         margin-bottom: 8px;
+         text-rendering: optimizeLegibility;
+     }
+
+     table {
+         width: 80%;
+         margin: auto;
+     }
+
+     table, th, td {
+         border: 1px solid #fff;
+         border-collapse: collapse;
+     }
+
+     th, td {
+         padding: 15px;
+     }
+.invul {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
 </style>
 
 <table>
@@ -41,6 +68,20 @@ if (isset($_POST['submit'])) {
         <th>Tankinhoud</th>
         <th>Verbruik</th>
     </tr>
+
+<form class="invul" method='post'>
+Merk: <input type='text' name='merk'><br>
+Type: <input type='text' name='type'><br>
+Kleur: <input type='text' name='kleur'><br>
+Heeft trekhaak: <input type='checkbox' name='trekhaak'><br>
+Kenteken: <input type='text' name='kenteken'><br>
+Kilometers: <input type='number' name='kilometers'><br>
+Benzine: <input type='number' name='benzine'><br>
+Tankinhoud: <input type='number' name='tankinhoud'><br>
+Verbruik: <input type='number' name='verbruik'><br>
+<input type='submit' name='submit' value='Submit'>
+</form>
+
     <?php
 
 echo "<br><br>";
