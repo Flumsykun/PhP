@@ -1,15 +1,14 @@
 <?php
 class Auto
 {
-    public $merk;
-    public $type;
-    public $kleur;
-    public $heeftTrekhaak;
-    private $kenteken;
-    private $kilometers;
-    public $tankinhoud;
-    private $benzine;
-    public $verbruik;
+public $type;
+public $kleur;
+public $heeftTrekhaak;
+public $kenteken;
+public $kilometers;
+public $tankinhoud;
+public $benzine;
+public $verbruik;
 
     function __construct($merk, $type, $kleur, $heeftTrekhaak, $kenteken, $kilometers, $tankinhoud, $benzine, $verbruik)
     {
@@ -23,6 +22,7 @@ class Auto
         $this->benzine = $benzine;
         $this->verbruik = $verbruik;
     }
+
     public function Tanken($liters = -1)
     {
         if ($liters > 0) {
@@ -31,6 +31,7 @@ class Auto
             $this->benzine = $this->tankinhoud;
         }
     }
+
     public function Rijden($kilometers)
     {
         $verbruik = ($this->verbruik = $kilometers) / 100;
@@ -61,7 +62,8 @@ class Auto
         }
     }
 }
-$auto1 = new Auto("Audi", "A4", "blauw", true, "12-AB-34", 165465, 59, 20, 1.5);
-$auto2 = new Auto("BMW", "X5", "zwart", false, "12-AB-34", 87867, 69, 20, 1.5);
-$auto3 = new Auto("Mercedes", "C200", "wit", true, "12-AB-34", 64566, 80, 20, 1.5);
+// $auto1 = new Auto("Audi", "A4", "blauw", true, "12-AB-34", 165465, 59, 20, 1.5);
+// $auto2 = new Auto("BMW", "X5", "zwart", false, "12-AB-34", 87867, 69, 20, 1.5);
+// $auto3 = new Auto("Mercedes", "C200", "wit", true, "12-AB-34", 64566, 80, 20, 1.5);
+
 ?>
